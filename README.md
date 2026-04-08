@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# SSBPC — Sistema de Seguimiento de Beneficiarios y Proyectos de Cooperación
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistema web de gestión para ONGs en Guatemala. Permite el seguimiento de beneficiarios, proyectos de cooperación, hitos, presupuesto, reportes y auditoría.
 
-## Available Scripts
+## 🛠 Tech Stack
 
-In the project directory, you can run:
+- **React 19** — Librería UI
+- **Tailwind CSS 3** — Utilidades de estilos
+- **React Router v7** (HashRouter) — Navegación SPA
+- **Recharts** — Gráficas interactivas
+- **Lucide React** — Iconografía
 
-### `npm start`
+## 📄 Páginas del Sistema
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Ruta | Descripción |
+|------|-------------|
+| `/login` | Inicio de sesión |
+| `/dashboard` | Dashboard con KPIs y gráfica |
+| `/beneficiarios` | Gestión de beneficiarios |
+| `/proyectos` | Gestión de proyectos |
+| `/hitos` | Hitos y evidencias por proyecto |
+| `/recursos` | Presupuesto y suministros |
+| `/reportes` | Reportes e impacto |
+| `/auditoria` | Registro de auditoría |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ▶ Ejecutar en Desarrollo
 
-### `npm test`
+```bash
+# Instalar dependencias
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Iniciar servidor de desarrollo (http://localhost:3000)
+npm start
+```
 
-### `npm run build`
+> **Demo**: En la pantalla de login, ingrese cualquier correo y contraseña para acceder.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🏗 Compilar para Producción
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Los archivos estarán en la carpeta `/build`.
 
-### `npm run eject`
+## 🚀 Despliegue en GitHub Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Instalar gh-pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install --save-dev gh-pages
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Configurar el repositorio en package.json
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Edite `package.json` y reemplace la línea `homepage` con la URL de su GitHub Pages:
 
-## Learn More
+```json
+"homepage": "https://<tu-usuario>.github.io/<nombre-del-repositorio>",
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Crear el repositorio en GitHub
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git init
+git add .
+git commit -m "Initial commit - SSBPC prototype"
+git remote add origin https://github.com/<tu-usuario>/<nombre-repo>.git
+git push -u origin main
+```
 
-### Code Splitting
+### 4. Desplegar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+Esto ejecuta automáticamente `npm run build` y publica el contenido en la rama `gh-pages`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 5. Configurar GitHub Pages
 
-### Making a Progressive Web App
+En el repositorio de GitHub:
+- Ve a **Settings** → **Pages**
+- En "Source", selecciona la rama **gh-pages** y la carpeta **/(root)**
+- Guarda los cambios
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+La app estará disponible en: `https://<tu-usuario>.github.io/<nombre-del-repositorio>`
 
-### Advanced Configuration
+> **Nota**: El sistema usa `HashRouter` (`#/ruta`) para compatibilidad con GitHub Pages sin necesidad de configuración de servidor.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Estructura del Proyecto
 
-### Deployment
+```
+src/
+├── components/
+│   ├── Layout.jsx       # Sidebar + Navbar
+│   └── Modal.jsx        # Componente modal reutilizable
+├── pages/
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│   ├── Beneficiarios.jsx
+│   ├── Proyectos.jsx
+│   ├── Hitos.jsx
+│   ├── Recursos.jsx
+│   ├── Reportes.jsx
+│   └── Auditoria.jsx
+├── mockData.js          # Datos de prueba (Guatemala)
+├── App.js               # Routing principal
+└── index.css            # Estilos globales + Tailwind
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 Notas
 
-### `npm run build` fails to minify
+- Todos los datos son estáticos (mock data). No se requiere backend.
+- Los formularios incluyen validación básica (campos requeridos, DPI único).
+- El sistema es responsivo para dispositivos móviles.
+- Los botones de exportación (PDF/Excel) son placeholders visuales.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+Desarrollado para curso de Ingeniería de Software — UMG 2024.
