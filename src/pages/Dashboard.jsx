@@ -69,10 +69,10 @@ export default function Dashboard() {
       <div className="page-header">
         <div>
           <h1 className="page-title">Dashboard</h1>
-          <p className="page-subtitle">Resumen general del sistema — Diciembre 2026</p>
+          <p className="page-subtitle">Resumen general del sistema — Abril 2026</p>
         </div>
         <div className="text-sm text-gray-500 bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm">
-          <Calendar size={14} className="inline mr-1" /> Actualizado: 10 Dic 2026
+          <Calendar size={14} className="inline mr-1" /> Actualizado: 08 Abr 2026
         </div>
       </div>
 
@@ -184,7 +184,7 @@ export default function Dashboard() {
         <div className="card">
           <p className="text-gray-500 text-sm font-medium">Hitos Este Mes</p>
           <p className="text-4xl font-bold text-gray-900 mt-1">5</p>
-          <p className="text-gray-400 text-xs mt-2">Vencen en Diciembre 2026</p>
+          <p className="text-gray-400 text-xs mt-2">Vencen en Abril 2026</p>
           <div className="mt-3 space-y-1">
             <div className="flex justify-between text-xs">
               <span className="text-green-600">2 completados</span>
