@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload, CheckCircle, Clock, Circle, FileText, Image, X, ChevronDown } from 'lucide-react';
+import { Upload, CheckCircle, Clock, Circle, FileText, Image, X, ChevronDown, Calendar } from 'lucide-react';
 import Modal from '../components/Modal';
 import { proyectos, hitos as allHitos } from '../mockData';
 
@@ -118,7 +118,7 @@ export default function Hitos() {
                           <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${cfg.bg} ${cfg.color}`}>{hito.estado}</span>
                         </div>
                         <p className="text-xs text-gray-500 mt-0.5">{hito.descripcion}</p>
-                        <p className="text-xs text-gray-400 mt-1">📅 {hito.fechaInicio} → {hito.fechaFin}</p>
+                        <p className="text-xs text-gray-400 mt-1"><Calendar size={12} className="inline mr-1 -mt-0.5" /> {hito.fechaInicio} → {hito.fechaFin}</p>
                       </div>
                     </div>
 

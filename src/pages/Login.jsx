@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, LogIn, Shield } from 'lucide-react';
+import { Eye, EyeOff, LogIn, Shield, AlertTriangle } from 'lucide-react';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ export default function Login() {
 
             {error && (
               <div className="mb-4 px-4 py-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm flex items-center gap-2">
-                <span>⚠</span> {error}
+                <span><AlertTriangle size={16} className="inline mr-1 text-red-600"/></span> {error}
               </div>
             )}
 
@@ -125,7 +125,7 @@ export default function Login() {
         </div>
 
         <p className="text-center text-primary-300 text-xs mt-6">
-          © 2024 SSBPC — Para ONGs en Guatemala · v1.0.0
+          © 2026 SSBPC — Para ONGs en Guatemala · v1.0.0
         </p>
       </div>
     </div>

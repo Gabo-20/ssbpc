@@ -25,7 +25,7 @@ export default function Layout({ children }) {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden">
+    <div className="flex flex-row-reverse h-screen bg-gray-50 overflow-hidden">
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -36,8 +36,8 @@ export default function Layout({ children }) {
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-30 w-64 bg-primary-900 flex flex-col transform transition-transform duration-300 ease-in-out
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}
+        className={`fixed lg:static inset-y-0 right-0 z-30 w-64 bg-primary-900 flex flex-col transform transition-transform duration-300 ease-in-out
+          ${sidebarOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'}`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-5 py-5 border-b border-primary-800">
@@ -49,7 +49,7 @@ export default function Layout({ children }) {
             <p className="text-primary-300 text-xs leading-tight truncate">Sistema Beneficiarios</p>
           </div>
           <button
-            className="ml-auto lg:hidden text-primary-300 hover:text-white"
+            className="mr-auto lg:hidden text-primary-300 hover:text-white"
             onClick={() => setSidebarOpen(false)}
           >
             <X size={20} />

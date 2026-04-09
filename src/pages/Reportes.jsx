@@ -121,7 +121,7 @@ export default function Reportes() {
         <div className="xl:col-span-3 card">
           <div className="mb-4">
             <h2 className="text-base font-semibold text-gray-900">Beneficiarios Registrados en el Tiempo</h2>
-            <p className="text-xs text-gray-400 mt-0.5">Crecimiento acumulado durante 2024</p>
+            <p className="text-xs text-gray-400 mt-0.5">Crecimiento acumulado durante 2026</p>
           </div>
           <div className="h-64">
             <ResponsiveContainer width="100%" height="100%">
